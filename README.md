@@ -1,8 +1,38 @@
-# MAVIK Motion Skill 🎬
+# MAVIK Create Motions 🎬
+
+> Antes **MAVIK Motion Skill**. Repositório: `mavik-motion-skill`; plugin: `mavik-create-motions`.
 
 > Uma habilidade open source para agentes produzirem motion graphics profissionais com **direção, roteiro, animação cinética, sincronização musical e revisão visual**.
 
-**Status:** v1.2.0 — base funcional e distribuível. Testes unitários e validadores incluídos. O uso com engines externas e o acabamento criativo devem ser homologados no equipamento e com a licença de cada ferramenta. **Não é um SaaS** e **não promete resultados perfeitos no primeiro render**.
+**Status:** v2.0.0 — estúdio de série (pastas, entrevista, memória e travas de aprovação) sobre a base funcional e distribuível. Testes unitários e validadores incluídos. O uso com engines externas e o acabamento criativo devem ser homologados no equipamento e com a licença de cada ferramenta. **Não é um SaaS** e **não promete resultados perfeitos no primeiro render**.
+
+## Estúdio de série (novo na v2.0.0)
+
+Você instala uma vez. Na primeira vez numa pasta, o estúdio confere o computador, **cria as pastas**, **entrevista só o que falta** (marca, série, voz, CTA) e grava tudo em arquivos. Em qualquer conversa nova, no Claude Code ou no Codex, "próximo episódio" continua de onde parou.
+
+| Comando (Claude Code) | O que faz |
+|---|---|
+| `/mavik-create-motions:setup` | Diagnóstico e criação do estúdio na pasta (prévia antes) |
+| `/mavik-create-motions:marca` | Entrevista da marca, uma pergunta por vez |
+| `/mavik-create-motions:serie` | Cria a série e entrevista linha editorial, formato, voz, trilha e CTA |
+| `/mavik-create-motions:episodio <pauta>` | Da pauta ao MP4, com 3 paradas para o seu ok |
+| `/mavik-create-motions:continuar` | Retoma de onde parou |
+| `/mavik-create-motions:aprender` | Transforma a sua correção em regra da série |
+| `/mavik-create-motions:status` | Onde está cada coisa e o próximo passo |
+
+```text
+<sua-pasta>/
+├── CLAUDE.md / AGENTS.md   # bloco que manda o agente ler a memória primeiro
+├── estudio.json            # série ativa e caminhos
+├── .mavik/status.json      # andamento para o painel
+├── marca/                  # marca.json, voz-da-marca.md, ativos/
+├── series/<serie>/         # serie.json, biblia.md, erros-corrigidos.md, pauta.md
+│   └── episodios/NNN-slug/ # estado.json, fontes.md, roteiro.md, voz/, render/, final/
+├── motor/                  # projeto Remotion compartilhado
+└── referencias/
+```
+
+Por baixo, é um script sem dependências: `node scripts/estudio.mjs init|serie|episodio|status|aprovar|etapa --dir PASTA` (sem `--yes` ele só mostra a prévia).
 
 ## O que faz
 
@@ -86,6 +116,20 @@ O template usa GSAP via CDN. Para ambientes offline, substitua a tag externa por
 
 ### Instalação no Claude Code
 
+Como plugin (recomendado):
+
+```bash
+/plugin marketplace add rafaeljorge-ai/mavik-motion-skill
+```
+
+```bash
+/plugin install mavik-create-motions@mavik
+```
+
+Depois, na pasta do projeto de vídeo: `/mavik-create-motions:setup`.
+
+Ou como skill local:
+
 Pode clonar o repositório e disponibilizar a **pasta inteira** como uma skill, pois o `SKILL.md` da raiz referencia as demais pastas:
 
 ```bash
@@ -97,7 +141,7 @@ No projeto, alternativamente, use `.claude/skills/mavik-motion-skill` apontando 
 
 ### Instalação no Codex
 
-O repositório é empacotado como plugin conforme o manifesto `plugin.json`, com `skills/` na raiz. Após publicação, use o mecanismo de plugins do seu ambiente Codex para instalar pelo repositório ou diretório. Para execução local por skill, disponibilize o diretório que contém `SKILL.md` no diretório de skills configurado para sua instalação Codex.
+O repositório é empacotado como plugin conforme `.codex-plugin/plugin.json` (e `plugin.json` na raiz), com a skill de onboarding `skills/mavik-create-motions`, com `skills/` na raiz. Após publicação, use o mecanismo de plugins do seu ambiente Codex para instalar pelo repositório ou diretório. Para execução local por skill, disponibilize o diretório que contém `SKILL.md` no diretório de skills configurado para sua instalação Codex.
 
 ### ChatGPT
 
@@ -109,7 +153,7 @@ O **código original desta distribuição** é MIT (consulte `LICENSE`). O mater
 
 ## Versionamento e releases
 
-A versão atual é **v1.2.0**. Atualize `CHANGELOG.md`, `package.json`, `plugin.json` e os dois `SKILL.md` juntos. Execute `npm run release:check` e `npm test` antes de qualquer commit e tag. Confira [CHANGELOG.md](CHANGELOG.md) para histórico e limitações. Publicações GitHub exigem revisão e aprovação; nenhum script faz push automaticamente.
+A versão atual é **v2.0.0**. Atualize `CHANGELOG.md`, `package.json`, os três manifestos de plugin e os três `SKILL.md` juntos. Execute `npm run release:check` e `npm test` antes de qualquer commit e tag. Confira [CHANGELOG.md](CHANGELOG.md) para histórico e limitações. Publicações GitHub exigem revisão e aprovação; nenhum script faz push automaticamente.
 
 ## Audio Director
 

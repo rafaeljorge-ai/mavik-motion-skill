@@ -1,0 +1,13 @@
+{
+  "esquema": 1,
+  "confirmado": true,
+  "nome": "Rafael Jorge",
+  "descricao": "IA aplicada a negócios: ajuda empresários a entender onde a IA entra no negócio deles.",
+  "handle": "@rafaeljorge.ai",
+  "cores": { "fundo": "#070707", "texto": "#f4f3ee", "destaque": "#cfff3d" },
+  "fontes": { "principal": "Inter", "tecnica": "JetBrains Mono" },
+  "tom": ["direto", "editorial", "executivo", "claro"],
+  "proibido": ["prometer vender mais", "prometer resultado garantido", "neon", "glitch"],
+  "cta_padrao": "Siga @rafaeljorge.ai e aprenda a aplicar IA para alavancar o seu negócio.",
+  "fonte_dos_dados": "Aprovado por Rafael na conversa de 06/11/2026 (Ep. 1 v4, nota 10/10). Exemplo: não é padrão para outros clientes."
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "mavik-create-motions",
+  "version": "2.0.0",
+  "description": "Estúdio de série de vídeos em motion: cria as pastas, entrevista só o que falta, guarda a memória em arquivos e produz episódios com Remotion, com aprovação humana.",
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/mavik-create-motions/SKILL.md"
+    }
+  }
+}

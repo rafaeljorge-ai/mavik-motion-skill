@@ -1,11 +1,33 @@
 # Changelog
 
-Este projeto segue [Semantic Versioning 2.0.0](https://semver.org/lang/pt-BR/). Versões `MAJOR.MINOR.PATCH`; toda alteração distribuída requer atualização sincronizada de `package.json`, `plugin.json`, `SKILL.md` e `skills/mavik-motion/SKILL.md`, testes CI e changelog. Tags Git anotadas `vX.Y.Z` serão criadas após testes e aprovação do release.
+Este projeto segue [Semantic Versioning 2.0.0](https://semver.org/lang/pt-BR/). Versões `MAJOR.MINOR.PATCH`; toda alteração distribuída requer atualização sincronizada de `package.json`, `plugin.json`, `.claude-plugin/`, `.codex-plugin/`, `SKILL.md`, `skills/mavik-motion/SKILL.md` e `skills/mavik-create-motions/SKILL.md`, testes CI e changelog. Tags Git anotadas `vX.Y.Z` serão criadas após testes e aprovação do release.
 
 ## [Unreleased]
 
 ### Próximos passos
 - Homologar render final de 8 s no Codex e um projeto narrado com trilha.
+
+## [2.0.0] - 2026-11-06
+
+O plugin passa a se chamar **mavik-create-motions**: um estúdio de série que se configura sozinho e lembra de tudo entre conversas, no Claude Code e no Codex. A skill de produção `mavik-motion` continua igual por baixo.
+
+### Adicionado
+- `scripts/estudio.mjs`: `init` (cria as pastas, `estudio.json`, `.mavik/status.json` e um bloco marcado no `CLAUDE.md`/`AGENTS.md`), `serie`, `episodio`, `status`, `aprovar` e `etapa`. Mostra prévia sem `--yes`; nunca apaga nem sobrescreve arquivo da pessoa.
+- Travas de aprovação por episódio: `voz` exige roteiro aprovado, `render` exige piloto e `publicado` exige final, sempre com quem aprovou e a frase exata.
+- `scripts/lib/estudio-schema.mjs`: campos da entrevista de marca e de série (uma pergunta por vez) e validações.
+- Skill `skills/mavik-create-motions` (orquestra setup, entrevista, episódio e aprender) e comandos `/mavik-create-motions:setup`, `marca`, `serie`, `episodio`, `continuar`, `aprender` e `status`.
+- Formato `formatos/motion-interface` com a bíblia do estilo em números do Ep. 1 aprovado.
+- Modelo `examples/rafaeljorge-noticias-ia` (marca, série, bíblia, erros corrigidos e pauta), só para a marca de Rafael.
+- Manifestos `.claude-plugin/` (plugin e marketplace) e `.codex-plugin/`.
+
+### Mudou
+- `plugin.json`: nome `mavik-create-motions`; a skill de onboarding do Codex passa a ser a do estúdio.
+- `doctor.mjs` lê a versão do `package.json`.
+
+### Ainda falta (próximos incrementos)
+- Porta do Ep. 1 para um componente Remotion que lê o JSON do episódio (`motor/formatos/motion-interface`).
+- Tempos de palavra sem créditos (pausas ou whisper local) dentro do fluxo.
+- Homologação: instalar no Claude Code e no Codex e produzir um episódio do zero.
 
 ## [1.2.0] - 2026-10-17
 

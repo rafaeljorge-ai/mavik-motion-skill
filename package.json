@@ -1,6 +1,6 @@
 {
   "name": "mavik-motion-skill",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Skill open source de direção, contexto de marca, Remotion/GSAP/Three.js, áudio, beat sync e QA para Codex e Claude Code.",
   "type": "module",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "brief:template": "node scripts/brief-check.mjs --template",
     "demo:remotion:install": "npm --prefix examples/demo-remotion install",
     "demo:remotion:render": "npm --prefix examples/demo-remotion run render",
-    "demo:remotion:still": "npm --prefix examples/demo-remotion run still"
+    "demo:remotion:still": "npm --prefix examples/demo-remotion run still",
+    "estudio": "node scripts/estudio.mjs"
   }
 }

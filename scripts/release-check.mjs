@@ -7,8 +7,9 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=x=>readFileSync(path.join(root,x),'utf8');
 const ver=JSON.parse(read('package.json')).version;
 if(!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(ver))throw new Error('SemVer inválido: '+ver);
-const plugin=JSON.parse(read('plugin.json')).version;
-if(ver!==plugin)throw new Error('Version mismatch: package.json vs plugin.json');
+for(const f of ['plugin.json','.claude-plugin/plugin.json','.codex-plugin/plugin.json']){if(JSON.parse(read(f)).version!==ver)throw new Error('Version mismatch: package.json vs '+f);}
+if(JSON.parse(read('.claude-plugin/marketplace.json')).plugins[0].version!==ver)throw new Error('Version mismatch: marketplace.json');
+if(!read('skills/mavik-create-motions/SKILL.md').includes(`\nversion: ${ver}\n`))throw new Error('Version mismatch: skills/mavik-create-motions/SKILL.md');
 for(const file of ['SKILL.md','skills/mavik-motion/SKILL.md']){
  if(!read(file).startsWith(`---\nname: mavik-motion\nversion: ${ver}\n`))throw new Error('Version mismatch: '+file);
 }

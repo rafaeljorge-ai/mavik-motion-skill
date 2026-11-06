@@ -8,7 +8,7 @@ import {validateShotlist} from '../scripts/validate-shotlist.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 function file(name){return readFileSync(path.join(root,name),'utf8');}
 test('manifest e skills instaláveis existem',()=>{
- const p=JSON.parse(file('plugin.json'));assert.equal(p.name,'mavik-motion-skill');assert.ok(file('skills/mavik-motion/SKILL.md').startsWith('---\nname: mavik-motion'));
+ const p=JSON.parse(file('plugin.json'));assert.equal(p.name,'mavik-create-motions');assert.ok(existsSync(path.join(root,'skills/mavik-create-motions/SKILL.md')));assert.ok(existsSync(path.join(root,'.claude-plugin/plugin.json')));assert.ok(existsSync(path.join(root,'.codex-plugin/plugin.json')));assert.ok(file('skills/mavik-motion/SKILL.md').startsWith('---\nname: mavik-motion'));
  assert.ok(existsSync(path.join(root,'skills/setup/SKILL.md')));
 });
 test('grade de batidas é determinística',()=>{
