@@ -1,0 +1,10 @@
+{
+  "name": "mavik-create-motions",
+  "version": "2.0.0",
+  "description": "Estúdio de série de vídeos em motion: cria as pastas, entrevista só o que falta, guarda a memória em arquivos e produz episódios com Remotion, com aprovação humana em 3 paradas.",
+  "author": { "name": "Mavik.ai Solutions", "url": "https://www.instagram.com/rafaeljorge.ai/" },
+  "homepage": "https://github.com/rafaeljorge-ai/mavik-motion-skill",
+  "repository": "https://github.com/rafaeljorge-ai/mavik-motion-skill",
+  "license": "MIT",
+  "keywords": ["motion", "reels", "remotion", "serie", "video", "skill"]
+}

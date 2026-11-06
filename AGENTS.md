@@ -11,3 +11,6 @@ A instalação de dependências, escrita fora da pasta de trabalho, uso de APIs 
 
 ## Mandatory preflight (v1.2.0)
 Run `node scripts/doctor.mjs` and `node scripts/brief-check.mjs <project>/brief.json` before any storyboard, synthesis or rendering. Do not infer brand identity or CTA from model memory. Remotion is the default; GSAP and Three.js are available as optional layers. No paid calls or install without approval.
+
+## Estúdio de série (v2.0.0)
+Para séries de vídeo, siga `skills/mavik-create-motions/SKILL.md`: comece por `node scripts/estudio.mjs status --dir <pasta>`. Os arquivos do estúdio (marca, série, bíblia, erros corrigidos, estado) valem mais do que a memória do modelo.

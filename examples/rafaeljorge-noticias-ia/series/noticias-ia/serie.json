@@ -1,0 +1,14 @@
+{
+  "esquema": 1,
+  "confirmado": true,
+  "nome": "noticias-ia",
+  "linha_editorial": "Notícia → mudança no mercado → consequência para o empresário → aplicação no negócio dele (faça isso hoje + por onde começar). Gancho como oportunidade.",
+  "publico": "Empresários e donos de PME no Brasil que querem usar IA no negócio",
+  "formato": "motion-interface",
+  "duracao_segundos": 45,
+  "voz": { "provedor": "fish", "id": "5b5a485751824c1993e210602cee16cb", "nome": "Voz feminina", "plano": "gratis", "observacao": "escrever i-á para a sigla IA" },
+  "trilha": { "direcao": "tech, discreta, bem abaixo da voz", "direitos": "original" },
+  "cta": { "texto": "Siga @rafaeljorge.ai e aprenda a aplicar IA para alavancar o seu negócio.", "destino": "https://instagram.com/rafaeljorge.ai" },
+  "frases_proibidas": ["vender mais", "Notícias de IA aplicadas ao seu negócio"],
+  "cadencia": "a definir (sugestão: 3 por semana)"
+}

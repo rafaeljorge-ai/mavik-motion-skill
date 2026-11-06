@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "mavik",
+  "description": "Plugins da Mavik.ai para Claude Code.",
+  "owner": { "name": "Mavik.ai Solutions" },
+  "plugins": [
+    {
+      "name": "mavik-create-motions",
+      "source": "./",
+      "version": "2.0.0",
+      "description": "Estúdio de série de vídeos em motion com memória em arquivos e aprovação humana."
+    }
+  ]
+}

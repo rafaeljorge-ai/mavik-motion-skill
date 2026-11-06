@@ -1,0 +1,13 @@
+{
+  "nome": "motion-interface",
+  "descricao": "Janela de app que muda de estado sem corte, legenda cinética no tempo da voz, cursor vivo e CTA de seguir clicado. Ideal para notícia ou tutorial narrado.",
+  "status": "aprovado",
+  "aprovado_em": "2026-11-06",
+  "origem": "Ep. 1 da série de notícias de IA de @rafaeljorge.ai (v4, 47 s), aprovado com nota 10/10",
+  "duracao_padrao": 45,
+  "trilha_padrao": "tech, discreta, bem abaixo da voz",
+  "resolucao": [1080, 1920],
+  "fps": 30,
+  "cenas_disponiveis": ["notificacoes", "pesquisa-com-dado", "chat-vazio", "comparacao", "resposta-com-lista", "teste-digitado", "lista-com-vaga", "checklist-aplicacao", "lista-com-virada", "cta-seguir"],
+  "componente": "motor/formatos/motion-interface (porta do Ep. 1 para JSON: incremento 3)"
+}

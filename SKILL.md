@@ -1,6 +1,6 @@
 ---
 name: mavik-motion
-version: 1.2.0
+version: 2.0.0
 description: Direção e produção de motion graphics profissionais para Reels, vídeos explicativos, anúncios e SaaS; analisar referências, criar roteiro e storyboard, animações kinetic editorial, transições fluidas e beat sync, renderizar com Remotion/GSAP/Three.js ou HyperFrames alternativo e executar QA visual e de áudio.
 ---
 
